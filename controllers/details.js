@@ -2,13 +2,13 @@ app.controller("detailsCtrl", function ($scope) {
     saveDataFromQueryString()
     $scope.licenseCode = license.code
     var index = parseInt(getParaCurr("index"))
-
+    $scope.questions = fullQuestions.filter(function(question){return license.code == "B2"})
     load(index);
 
     function load(index) {
         $scope.index = index;
         
-        $scope.question = fullQuestions.filter(function(question){return question.index == $scope.index})[0];
+        $scope.question = $scope.questions.filter(function(question){return question.index == $scope.index})[0];
         
         $scope.show_result = hasAnswered($scope.licenseCode, $scope.question.index);
     }
