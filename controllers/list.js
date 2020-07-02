@@ -3,8 +3,9 @@ app.controller("listCtrl", function ($scope) {
     $scope.countDung = 0;
     $scope.countSai = 0;
     $scope.list = [];
-
-    fullQuestions.forEach(function(question){
+    $scope.questions = fullQuestions.filter(function(question){return question.licenseCode==license.code})
+    
+    $scope.questions.forEach(function(question){
         var danger_css =question.required > 0 ? "danger" : ""
         var css_class = "" + danger_css;
 
