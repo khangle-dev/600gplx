@@ -14,4 +14,4 @@ var fullLicenses = [
     {"code":"F", "display":"Các loại xe rơ moóc có trọng tải trên 750 kg, sơ mi rơ moóc, ô tô khách nối toa", "timer":1500, "pass":42, "randQuestions":[{"topicCode":1, "num":12},{"topicCode":2, "num":2},{"topicCode":3, "num":2},{"topicCode":4, "num":4},{"topicCode":5, "num":2},{"topicCode":6, "num":12},{"topicCode":7, "num":7}]}
 ]
 
-var license = fullLicenses.filter(function(lic){return lic.code=="B2"})[0]
+var license = fullLicenses.filter(function(lic){return lic.code==(localStorage.getItem("is_license")?localStorage.getItem("is_license"):"B2")})[0]

@@ -80,6 +80,30 @@ function isAnswered(licenseCode, questionIndex, answerIndex) {
     }
 }
 
+
+function isChooseLicense(licenseCode) {
+    var key = "is_license"
+    var value = localStorage.getItem(key);
+    if (value == licenseCode) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function chooseLicense(licenseCode) {
+    var key = "is_license"
+    localStorage.setItem(key, licenseCode);
+    return true
+}
+
+function getSavedLicense() {
+    var key = "is_license"
+    var value = localStorage.getItem(key)
+
+    return value?value:"B2"
+}
+
 function hasAnswered(licenseCode, questionIndex) {
     var question = fullQuestions[questionIndex]
     
