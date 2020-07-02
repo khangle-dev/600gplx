@@ -45,6 +45,10 @@ app.config(function($routeProvider) {
             templateUrl : "views/reset.html",
             controller : "resetCtrl"
         })
+        .when("/setting", {
+            templateUrl : "views/setting.html",
+            controller : "settingCtrl"
+        })
         .when("/user-guide", {
             templateUrl : "views/user-guide.html",
             controller : "userGuideCtrl"
