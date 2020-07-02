@@ -51,11 +51,11 @@ app.controller("examCtrl", function ($scope, $interval) {
 
     $scope.toggleAnswer = function (answerIndex) {
         //$scope.saveAnses[$scope.index] = $scope.question.answers[answerIndex].correct
-        toggleAnswer($scope.licenseCode, $scope.index, answerIndex);
+        toggleExamAnswer($scope.licenseCode, $scope.index, answerIndex);
     }
 
     $scope.isAnswered = function(answerIndex) {
-        return isAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
+        return isExamAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
     }
 
     $scope.submit = function() {
