@@ -80,6 +80,11 @@ function isAnswered(licenseCode, questionIndex, answerIndex) {
     }
 }
 
+function getSaveAns(licenseCode, questionIndex) {
+    var key = "is_answer_" + licenseCode + "_" + questionIndex;
+    var value = localStorage.getItem(key);
+    return value
+}
 
 function isChooseLicense(licenseCode) {
     var key = "is_license"
@@ -107,7 +112,6 @@ function getSavedLicense() {
 function hasAnswered(licenseCode, questionIndex) {
     var question = fullQuestions[questionIndex]
     
-    console.log(question)
     for (var i = 0; i < question.answers.length; i++) {
         if (isAnswered(licenseCode, questionIndex, i)) {
             return true;
