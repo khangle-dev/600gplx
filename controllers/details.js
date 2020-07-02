@@ -8,7 +8,7 @@ app.controller("detailsCtrl", function ($scope) {
     function load(index) {
         $scope.index = index;
         
-        $scope.question = fullQuestions[$scope.index];
+        $scope.question = fullQuestions.filter(function(question){return question.index == $scope.index})[0];
         
         $scope.show_result = hasAnswered($scope.licenseCode, $scope.question.index);
     }
