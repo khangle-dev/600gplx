@@ -62,6 +62,8 @@ app.controller("examCtrl", function ($scope, $interval) {
         $scope.saveAnses = $scope.questionNos.map(function(questionIndex){
             return isExamAnsweredWrong($scope.licenseCode, $scope.examCode, questionIndex)
         })
+        
+        console.log ($scope.saveAnses)
         var danger = 0
         saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${$scope.saveAnses.filter(function(e){return e == true}).length}", "time":"${$scope.countDown}", "danger":"${danger}"}`)
     }
