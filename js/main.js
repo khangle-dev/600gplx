@@ -96,6 +96,16 @@ function isExamAnswered(licenseCode, examCode, questionIndex, answerIndex) {
     }
 }
 
+function isExamAnsweredWrong(licenseCode, examCode, questionIndex) {
+    var question = fullQuestions[questionIndex];
+    for (var i = 0; i < question.answers.length; i++) {
+        var answer = question.answers[i];
+        if (answer.correct && !isAnswered(licenseCode, examCode, questionIndex, i)) return true;
+        if (!answer.correct && isAnswered(licenseCode, examCode, questionIndex, i)) return true;
+    }
+    return false;
+}
+
 function getSaveAns(licenseCode, questionIndex) {
     var key = "is_answer_" + licenseCode + "_" + questionIndex;
     var value = localStorage.getItem(key);
