@@ -1,0 +1,18 @@
+<div id="list-danger-page" class="page has-menu">
+    <h1 style="text-align: center;">Cài đặt</h1>
+    <div class="menu">
+        <a class="item" href="#!index">
+            <i class="fa fa-home"></i>
+        </a>
+    </div>
+    <div id="list">
+        <div class="item" ng-repeat="lic in list">
+            <a href="#!">
+                <div>
+                    <b style="color: #0171ec;">Bằng {{ lic.code }}</b>
+                </div>
+                <div>{{ lic.display }}</div>
+            </a>
+        </div>
+    </div>
+</div>
