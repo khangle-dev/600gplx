@@ -8,7 +8,6 @@ app.controller("listExamCtrl", function ($scope) {
         var css_class = ""
         var saved = getSavedExam(license.code, topics[i])
         var result = JSON.parse(saved)
-        console.log(result)
         $scope.list.push({index: topics[i], css_class: css_class, pass: result?result.passed:0});
     }
 });

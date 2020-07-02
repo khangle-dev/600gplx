@@ -4,7 +4,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.licenseCode = license.code
 
     var questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode == $scope.licenseCode)}).map(function(exam){return exam.questionNo})
-    
+    console.log(questionNos)
     $scope.questionNos = questionNos
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
@@ -51,19 +51,17 @@ app.controller("examCtrl", function ($scope, $interval) {
 
     $scope.toggleAnswer = function (answerIndex) {
         //$scope.saveAnses[$scope.index] = $scope.question.answers[answerIndex].correct
-        toggleExamAnswer($scope.licenseCode, $scope.examCode, $scope.index, answerIndex);
+        toggleExamAnswer($scope.licenseCode, $scope.examCode, $scope.question.index, answerIndex);
     }
 
     $scope.isAnswered = function(answerIndex) {
-        return isExamAnswered($scope.licenseCode, $scope.examCode, $scope.index, answerIndex) == true ? "checked" : ""
+        return isExamAnswered($scope.licenseCode, $scope.examCode, $scope.question.index, answerIndex) == true ? "checked" : ""
     }
 
     $scope.submit = function() {
         var saveAnses = $scope.questionNos.map(function(questionIndex){
             return isExamAnsweredCorrect($scope.licenseCode, $scope.examCode, questionIndex)
         })
-        
-        console.log (saveAnses)
         var danger = 0
         saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${saveAnses.filter(function(e){return e == true}).length}", "time":"${$scope.countDown}", "danger":"${danger}"}`)
     }

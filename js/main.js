@@ -88,7 +88,8 @@ function toggleExamAnswer(licenseCode, examCode, questionIndex, answerIndex) {
 
 function isExamAnswered(licenseCode, examCode, questionIndex, answerIndex) {
     var key = "is_answer_" + licenseCode + "_" + examCode + "_" + questionIndex
-    var value = localStorage.getItem(key);
+    var value = localStorage.getItem(key)
+
     if (value == answerIndex) {
         return true;
     } else {
@@ -97,7 +98,7 @@ function isExamAnswered(licenseCode, examCode, questionIndex, answerIndex) {
 }
 
 function isExamAnsweredWrong(licenseCode, examCode, questionIndex) {
-    var question = fullQuestions[questionIndex];
+    var question = fullQuestions.filter(function(question){return question.index == questionIndex})[0]
     for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
         var answer = question.answers[answerIndex];
         if (answer.correct && !isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
@@ -107,9 +108,11 @@ function isExamAnsweredWrong(licenseCode, examCode, questionIndex) {
 }
 
 function isExamAnsweredCorrect(licenseCode, examCode, questionIndex) {
-    var question = fullQuestions[questionIndex];
+    var question = fullQuestions.filter(function(question){return question.index == questionIndex})[0]
+
     for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
         var answer = question.answers[answerIndex];
+
         if (answer.correct && isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
     }
     return false;
@@ -146,7 +149,7 @@ function getSavedLicense() {
 }
 
 function hasAnswered(licenseCode, questionIndex) {
-    var question = fullQuestions[questionIndex]
+    var question = fullQuestions.filter(function(question){return question.index == questionIndex})[0]
     
     for (var i = 0; i < question.answers.length; i++) {
         if (isAnswered(licenseCode, questionIndex, i)) {
@@ -157,7 +160,7 @@ function hasAnswered(licenseCode, questionIndex) {
 }
 
 function isAnsweredWrong(licenseCode, questionIndex) {
-    var question = fullQuestions[questionIndex];
+    var question = fullQuestions.filter(function(question){return question.index == questionIndex})[0]
     for (var i = 0; i < question.answers.length; i++) {
         var answer = question.answers[i];
         if (answer.correct && !isAnswered(licenseCode, questionIndex, i)) return true;

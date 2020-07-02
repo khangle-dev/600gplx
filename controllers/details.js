@@ -33,7 +33,6 @@ app.controller("detailsCtrl", function ($scope) {
     };
 
     $scope.isAnswered = function(answerIndex) {
-        console.log(isAnswered($scope.licenseCode, $scope.index, answerIndex))
         return isAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
     }
 
