@@ -3,4 +3,7 @@ app.controller("settingCtrl", function ($scope) {
     $scope.chooseLicense = function (licenseCode) {
         console.log(licenseCode)
     };
+    $scope.isChoose = function (licenseCode) {
+        return true
+    };
 });
