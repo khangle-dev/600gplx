@@ -100,8 +100,8 @@ function isExamAnsweredWrong(licenseCode, examCode, questionIndex) {
     var question = fullQuestions[questionIndex];
     for (var i = 0; i < question.answers.length; i++) {
         var answer = question.answers[i];
-        if (answer.correct && !isAnswered(licenseCode, examCode, questionIndex, i)) return true;
-        if (!answer.correct && isAnswered(licenseCode, examCode, questionIndex, i)) return true;
+        if (answer.correct && !isExamAnswered(licenseCode, examCode, questionIndex, i)) return true;
+        if (!answer.correct && isExamAnswered(licenseCode, examCode, questionIndex, i)) return true;
     }
     return false;
 }
