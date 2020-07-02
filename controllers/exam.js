@@ -35,7 +35,7 @@ app.controller("examCtrl", function ($scope, $interval) {
         var index = $scope.index;
         index ++;
 
-        if (index > $scope.questions.length - 1) index = 0;
+        if (index > $scope.questions.length - 1) index =$scope.questions.length - 1
 
         load(index);
     }
@@ -44,7 +44,7 @@ app.controller("examCtrl", function ($scope, $interval) {
         var index = $scope.index;
         index --;
 
-        if (index < 0) index = $scope.questions.length - 1;
+        if (index < 0) index = 0;
 
         load(index);
     }
