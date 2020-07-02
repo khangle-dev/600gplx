@@ -57,7 +57,9 @@ app.controller("examCtrl", function ($scope, $interval) {
     }
 
     $scope.submit = function() {
-        console.log($scope.saveAnses)
+        $scope.saveAnses = $scope.questionNos.map(function(questionIndex){
+            return isAnsweredWrong($scope.licenseCode, questionIndex)
+        })
         var danger = 0
         saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${$scope.saveAnses.filter(function(e){return e == true}).length}", "time":"${$scope.countDown}", "danger":"${danger}"}`)
     }
