@@ -98,10 +98,10 @@ function isExamAnswered(licenseCode, examCode, questionIndex, answerIndex) {
 
 function isExamAnsweredWrong(licenseCode, examCode, questionIndex) {
     var question = fullQuestions[questionIndex];
-    for (var i = 0; i < question.answers.length; i++) {
+    for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
         var answer = question.answers[i];
-        if (answer.correct && !isExamAnswered(licenseCode, examCode, questionIndex, i)) return true;
-        if (!answer.correct && isExamAnswered(licenseCode, examCode, questionIndex, i)) return true;
+        if (answer.correct && !isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
+        if (!answer.correct && isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
     }
     return false;
 }
