@@ -4,6 +4,8 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.licenseCode = license.code
 
     var questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode == $scope.licenseCode)}).map(function(exam){return exam.questionNo})
+    
+    $scope.questionNos = questionNos
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
     $scope.countDown = license.timer
@@ -48,7 +50,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.toggleAnswer = function (answerIndex) {
         $scope.saveAnses[$scope.index] = $scope.question.answers[answerIndex].correct
         toggleAnswer($scope.licenseCode, $scope.index, answerIndex);
-    };
+    }
 
     $scope.isAnswered = function(answerIndex) {
         return isAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
