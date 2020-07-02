@@ -51,16 +51,16 @@ app.controller("examCtrl", function ($scope, $interval) {
 
     $scope.toggleAnswer = function (answerIndex) {
         //$scope.saveAnses[$scope.index] = $scope.question.answers[answerIndex].correct
-        toggleExamAnswer($scope.licenseCode, $scope.index, answerIndex);
+        toggleExamAnswer($scope.licenseCode, $scope.examCode, $scope.index, answerIndex);
     }
 
     $scope.isAnswered = function(answerIndex) {
-        return isExamAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
+        return isExamAnswered($scope.licenseCode, $scope.examCode, $scope.index, answerIndex) == true ? "checked" : ""
     }
 
     $scope.submit = function() {
         $scope.saveAnses = $scope.questionNos.map(function(questionIndex){
-            return isAnsweredWrong($scope.licenseCode, questionIndex)
+            return isExamAnsweredWrong($scope.licenseCode, $scope.examCode, questionIndex)
         })
         var danger = 0
         saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${$scope.saveAnses.filter(function(e){return e == true}).length}", "time":"${$scope.countDown}", "danger":"${danger}"}`)
