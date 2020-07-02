@@ -65,13 +65,29 @@ function getCurrentQuestionIndex() {
 }
 
 function toggleAnswer(licenseCode, questionIndex, answerIndex) {
-    var key = "is_answer_" + licenseCode + "_" + questionIndex;
-    localStorage.setItem(key, answerIndex);
+    var key = "is_answer_" + licenseCode + "_" + questionIndex
+    localStorage.setItem(key, answerIndex)
     return true
 }
 
 function isAnswered(licenseCode, questionIndex, answerIndex) {
-    var key = "is_answer_" + licenseCode + "_" + questionIndex;
+    var key = "is_answer_" + licenseCode + "_" + questionIndex
+    var value = localStorage.getItem(key)
+    if (value == answerIndex) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function toggleExamAnswer(licenseCode, examCode, questionIndex, answerIndex) {
+    var key = "is_answer_" + licenseCode + "_" + examCode + "_" + questionIndex
+    localStorage.setItem(key, answerIndex);
+    return true
+}
+
+function isExamAnswered(licenseCode, examCode, questionIndex, answerIndex) {
+    var key = "is_answer_" + licenseCode + "_" + examCode + "_" + questionIndex
     var value = localStorage.getItem(key);
     if (value == answerIndex) {
         return true;
