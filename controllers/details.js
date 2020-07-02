@@ -21,7 +21,7 @@ app.controller("detailsCtrl", function ($scope) {
         var answer = $scope.question.answers[answerIndex];
         if (answer.correct) {
             return "correct";
-        } else if (isAnswered($scope.licenseCode, $scope.index, answerIndex)) {
+        } else if (isAnswered($scope.licenseCode, $scope.question.index, answerIndex)) {
             return "wrong";
         } else {
             return "";
@@ -29,11 +29,11 @@ app.controller("detailsCtrl", function ($scope) {
     };
 
     $scope.toggleAnswer = function (answerIndex) {
-        toggleAnswer($scope.licenseCode, $scope.index, answerIndex);
+        toggleAnswer($scope.licenseCode, $scope.question.index, answerIndex);
     };
 
     $scope.isAnswered = function(answerIndex) {
-        return isAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
+        return isAnswered($scope.licenseCode, $scope.question.index, answerIndex) == true ? "checked" : ""
     }
 
     $scope.nextQuestion = function() {
