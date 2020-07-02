@@ -3,6 +3,7 @@ app.controller("detailsCtrl", function ($scope) {
     $scope.licenseCode = license.code
     var index = parseInt(getParaCurr("index"))
     $scope.questions = fullQuestions.filter(function(question){return license.code == "B2"})
+    
     load(index);
 
     function load(index) {
