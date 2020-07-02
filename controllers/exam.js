@@ -17,6 +17,8 @@ app.controller("examCtrl", function ($scope, $interval) {
         var seconds = Math.floor($scope.countDown % 60)
 
         $scope.timer = `${minutes} : ${seconds}`
+        
+        if (countDown == 0) alert("Hết giờ")
     }, 1000, $scope.countDown)
 
     load(0)
