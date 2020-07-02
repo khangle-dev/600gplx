@@ -9,7 +9,7 @@
         <div class="item" ng-repeat="lic in list" ng-click="chooseLicense(lic.code)">
             <a href="#!">
                 <div >
-                    <input type="radio" name = "ansRadio"  ng-checked = "isChoose(lic.code)"/> 
+                    <input type="radio" name = "licRadio"  ng-checked = "isChoose(lic.code)"/> 
                     <b style="color: #0171ec;">Bằng {{ lic.code }}</b>
                 </div>
                 <div>{{ lic.display }}</div>
