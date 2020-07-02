@@ -9,7 +9,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
     $scope.countDown = 10//license.timer
-    $scope.saveAnses = new Array(questionNos.length).fill(false)
+    //$scope.saveAnses = new Array(questionNos.length).fill(false)
 
     $interval(function() {
         $scope.countDown--
@@ -59,12 +59,12 @@ app.controller("examCtrl", function ($scope, $interval) {
     }
 
     $scope.submit = function() {
-        $scope.saveAnses = $scope.questionNos.map(function(questionIndex){
+        var saveAnses = $scope.questionNos.map(function(questionIndex){
             return isExamAnsweredWrong($scope.licenseCode, $scope.examCode, questionIndex)
         })
         
-        console.log ($scope.saveAnses)
+        console.log (saveAnses)
         var danger = 0
-        saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${$scope.saveAnses.filter(function(e){return e == true}).length}", "time":"${$scope.countDown}", "danger":"${danger}"}`)
+        saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${saveAnses.filter(function(e){return e == true}).length}", "time":"${$scope.countDown}", "danger":"${danger}"}`)
     }
 });
