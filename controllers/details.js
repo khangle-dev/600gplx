@@ -1,19 +1,16 @@
 app.controller("detailsCtrl", function ($scope) {
-    saveDataFromQueryString();
+    saveDataFromQueryString()
+    $scope.licenseCode = license.code
+    var index = parseInt(getParaCurr("index"))
 
-    load();
+    load(index);
 
-    function load() {
-        $scope.topic = getParaCurr("topic");
-        $scope.index = getCurrentQuestionIndex();
+    function load(index) {
+        $scope.index = index;
         
-        if ($scope.topic == "" || $scope.topic == "0") {
-            $scope.question = fullQuestions[$scope.index];
-        }else{
-            $scope.question = fullQuestions.filter(function(question) {return question.topic == parseInt($scope.topic)})[$scope.index];
-        }
+        $scope.question = fullQuestions[$scope.index];
         
-        $scope.show_result = hasAnswered($scope.index);
+        $scope.show_result = hasAnswered($scope.licenseCode, $scope.index);
     }
 
     $scope.getAnswerClass = function (answerIndex) {
@@ -24,7 +21,7 @@ app.controller("detailsCtrl", function ($scope) {
         var answer = $scope.question.answers[answerIndex];
         if (answer.correct) {
             return "correct";
-        } else if (isAnswered($scope.index, answerIndex)) {
+        } else if (isAnswered($scope.licenseCode, $scope.index, answerIndex)) {
             return "wrong";
         } else {
             return "";
@@ -32,12 +29,12 @@ app.controller("detailsCtrl", function ($scope) {
     };
 
     $scope.toggleAnswer = function (answerIndex) {
-        toggleAnswer($scope.index, answerIndex);
+        toggleAnswer($scope.licenseCode, $scope.index, answerIndex);
     };
 
     $scope.isAnswered = function(answerIndex) {
-        console.log(isAnswered($scope.index, answerIndex))
-        return isAnswered($scope.index, answerIndex) == true ? "checked" : ""
+        console.log(isAnswered($scope.licenseCode, $scope.index, answerIndex))
+        return isAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
     }
 
     $scope.nextQuestion = function() {
@@ -45,8 +42,7 @@ app.controller("detailsCtrl", function ($scope) {
         index ++;
         if (index > fullQuestions.length - 1) index = 0;
 
-        localStorage.currentIndex = index;
-        load();
+        load(index);
     }
 
     $scope.prevQuestion = function() {
@@ -54,8 +50,7 @@ app.controller("detailsCtrl", function ($scope) {
         index --;
         if (index < 0) index = fullQuestions.length - 1;
 
-        localStorage.currentIndex = index;
-        load();
+        load(index);
     }
 
     $scope.toggleResult = function () {

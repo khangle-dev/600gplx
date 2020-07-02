@@ -1,23 +1,22 @@
 app.controller("questionCtrl", function ($scope) {
+    $scope.topicCode = getParaCurr("topic");
+    $scope.topic = topics.filter(function(topic){return topic.code==$scope.topicCode})[0]
+
+    if ($scope.topicCode == "" || $scope.topicCode == "0") {
+        $scope.questions = fullQuestions;
+    }else{
+        if ($scope.topicCode == "8"){
+            $scope.questions = fullQuestions.filter(function(question) {return question.required > 0});
+        }else{
+            $scope.questions = fullQuestions.filter(function(question) {return question.topic == parseInt($scope.topicCode)});
+        }
+    }
 
     load(0);
 
     function load(index = 0) {
-        $scope.topicCode = getParaCurr("topic");
-        $scope.topic = topics.filter(function(topic){return topic.code==$scope.topicCode})[0]
         $scope.index = index;
         $scope.show_result = true;
-        
-        if ($scope.topicCode == "" || $scope.topicCode == "0") {
-            $scope.questions = fullQuestions;
-        }else{
-            if ($scope.topicCode == "8"){
-                $scope.questions = fullQuestions.filter(function(question) {return question.required > 0});
-            }else{
-                $scope.questions = fullQuestions.filter(function(question) {return question.topic == parseInt($scope.topicCode)});
-            }
-        }
-
         $scope.question = $scope.questions[index]
     }
 

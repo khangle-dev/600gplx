@@ -64,14 +64,14 @@ function getCurrentQuestionIndex() {
     return db.getInt("currentIndex", 0);
 }
 
-function toggleAnswer(questionIndex, answerIndex) {
-    var key = "is_answer_" + questionIndex;
+function toggleAnswer(licenseCode, questionIndex, answerIndex) {
+    var key = "is_answer_" + licenseCode + "_" + questionIndex;
     localStorage.setItem(key, answerIndex);
     return true
 }
 
-function isAnswered(questionIndex, answerIndex) {
-    var key = "is_answer_" + questionIndex;
+function isAnswered(licenseCode, questionIndex, answerIndex) {
+    var key = "is_answer_" + licenseCode + "_" + questionIndex;
     var value = localStorage.getItem(key);
     if (value == answerIndex) {
         return true;
@@ -80,22 +80,24 @@ function isAnswered(questionIndex, answerIndex) {
     }
 }
 
-function hasAnswered(questionIndex) {
-    var question = fullQuestions[questionIndex];
+function hasAnswered(licenseCode, questionIndex) {
+    var question = fullQuestions[questionIndex]
+    
+    console.log(question)
     for (var i = 0; i < question.answers.length; i++) {
-        if (isAnswered(questionIndex, i)) {
+        if (isAnswered(licenseCode, questionIndex, i)) {
             return true;
         }
     }
     return false;
 }
 
-function isAnsweredWrong(questionIndex) {
+function isAnsweredWrong(licenseCode, questionIndex) {
     var question = fullQuestions[questionIndex];
     for (var i = 0; i < question.answers.length; i++) {
         var answer = question.answers[i];
-        if (answer.correct && !isAnswered(questionIndex, i)) return true;
-        if (!answer.correct && isAnswered(questionIndex, i)) return true;
+        if (answer.correct && !isAnswered(licenseCode, questionIndex, i)) return true;
+        if (!answer.correct && isAnswered(licenseCode, questionIndex, i)) return true;
     }
     return false;
 }
