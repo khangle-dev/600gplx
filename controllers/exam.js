@@ -7,6 +7,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
     $scope.countDown = license.timer
+    $scope.saveAnses = new Array(questionNos.length).fill(false)
 
     $interval(function() {
         $scope.countDown--
@@ -45,6 +46,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     }
 
     $scope.toggleAnswer = function (answerIndex) {
+        $scope.saveAnses[$scope.index] = $scope.question.answers[answerIndex].correct
         toggleAnswer($scope.licenseCode, $scope.index, answerIndex);
     };
 
@@ -52,4 +54,9 @@ app.controller("examCtrl", function ($scope, $interval) {
         return isAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
     }
 
+    $scope.submit = function() {
+        console.log($scope.saveAnses)
+        var danger = 0
+        saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${$scope.saveAnses.filter(function(e){return e == true}).length}", "time":"${$scope.countDown}", "danger":"${danger}"}`)
+    }
 });
