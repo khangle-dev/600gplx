@@ -99,12 +99,22 @@ function isExamAnswered(licenseCode, examCode, questionIndex, answerIndex) {
 function isExamAnsweredWrong(licenseCode, examCode, questionIndex) {
     var question = fullQuestions[questionIndex];
     for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
-        var answer = question.answers[i];
+        var answer = question.answers[answerIndex];
         if (answer.correct && !isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
         if (!answer.correct && isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
     }
     return false;
 }
+
+function isExamAnsweredCorrect(licenseCode, examCode, questionIndex) {
+    var question = fullQuestions[questionIndex];
+    for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
+        var answer = question.answers[answerIndex];
+        if (answer.correct && isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
+    }
+    return false;
+}
+
 
 function getSaveAns(licenseCode, questionIndex) {
     var key = "is_answer_" + licenseCode + "_" + questionIndex;
