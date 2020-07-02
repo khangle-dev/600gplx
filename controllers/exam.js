@@ -48,7 +48,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     }
 
     $scope.toggleAnswer = function (answerIndex) {
-        $scope.saveAnses[$scope.index] = $scope.question.answers[answerIndex].correct
+        //$scope.saveAnses[$scope.index] = $scope.question.answers[answerIndex].correct
         toggleAnswer($scope.licenseCode, $scope.index, answerIndex);
     }
 
