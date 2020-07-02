@@ -8,7 +8,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.questionNos = questionNos
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
-    $scope.countDown = 10//license.timer
+    $scope.countDown = license.timer
     //$scope.saveAnses = new Array(questionNos.length).fill(false)
 
     $interval(function() {
