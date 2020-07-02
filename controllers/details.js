@@ -10,7 +10,7 @@ app.controller("detailsCtrl", function ($scope) {
         
         $scope.question = fullQuestions[$scope.index];
         
-        $scope.show_result = hasAnswered($scope.licenseCode, $scope.index);
+        $scope.show_result = hasAnswered($scope.licenseCode, $scope.question.index);
     }
 
     $scope.getAnswerClass = function (answerIndex) {
