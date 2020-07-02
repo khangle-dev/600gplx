@@ -60,7 +60,7 @@ app.controller("examCtrl", function ($scope, $interval) {
 
     $scope.submit = function() {
         var saveAnses = $scope.questionNos.map(function(questionIndex){
-            return isExamAnsweredWrong($scope.licenseCode, $scope.examCode, questionIndex)
+            return isExamAnsweredCorrect($scope.licenseCode, $scope.examCode, questionIndex)
         })
         
         console.log (saveAnses)
