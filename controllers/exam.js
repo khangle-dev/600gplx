@@ -1,4 +1,4 @@
-app.controller("examCtrl", function ($scope) {
+app.controller("examCtrl", function ($scope, $interval) {
 
     $scope.examCode = getParaCurr("examCode")
     $scope.licenseCode = license.code
@@ -6,7 +6,17 @@ app.controller("examCtrl", function ($scope) {
     var questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode == $scope.licenseCode)}).map(function(exam){return exam.questionNo})
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
-    load(0);
+    $scope.countDown = license.timer
+
+    $interval(function() {
+        $scope.countDown--
+        var minutes = Math.floor($scope.countDown / 60)
+        var seconds = Math.floor($scope.countDown % 60)
+
+        $scope.timer = `${minutes} : ${seconds}`
+    }, 1000, $scope.countDown)
+
+    load(0)
 
     function load(index = 0) {
         
@@ -41,4 +51,5 @@ app.controller("examCtrl", function ($scope) {
     $scope.isAnswered = function(answerIndex) {
         return isAnswered($scope.licenseCode, $scope.index, answerIndex) == true ? "checked" : ""
     }
+
 });
