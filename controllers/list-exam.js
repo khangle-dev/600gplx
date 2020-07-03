@@ -10,7 +10,8 @@ app.controller("listExamCtrl", function ($scope) {
 
         var result = JSON.parse(saved)
         $scope.list.push({index: topics[i], 
-            css_class: result?(result.result==1?"passed":"failed"):"",
+            css_class: result?(result.result==0?"border-width: 0px;border-radius: 5px; padding:5px;background-color:#dc1354; color:white":"border-width: 0px;border-radius: 5px; padding:5px;background-color:#0171ec; color:white"):"border-radius: 5px; padding:5px",
+            title_css: result?"color:white;":"color:#0171ec;",
             passed: result?result.passed:0, 
             failed: result?result.failed:0, 
             danger: result?result.danger:0, 

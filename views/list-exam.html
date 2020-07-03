@@ -6,8 +6,8 @@
         </a>
     </div>
     <div id="list">
-        <div id="exam" style="border-radius: 5px; padding:5px" ng-repeat="item in list" class="{{ item.css_class }}">
-            <a style="color: #0171ec; font-weight:bold;" href="#!exam?examCode={{ item .index}}">Đề số {{ item.index }}</a>
+        <div id="exam" ng-repeat="item in list" style = "{{ item.css_class }}">
+            <a style="{{item.title_css}} font-weight:bold;" href="#!exam?examCode={{ item .index}}">Đề số {{ item.index }}</a>
             <div style="width: 100%; align-items: center;padding: 2px">{{ item.result }}</div>
             <div style="width: 100%; display: flex;align-items: center;padding: 2px">
                 <div style="width: 100%; display: flex;align-items: center;padding: 2px">
