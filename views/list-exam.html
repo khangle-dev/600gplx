@@ -8,19 +8,23 @@
     <div id="list">
         <div id="exam" style="border-radius: 5px;" ng-repeat="item in list" class="{{ item.css_class }}">
             <a style="color: #0171ec; font-weight:bold;" href="#!exam?examCode={{ item .index}}">Đề số {{ item.index }}</a>
-            <div style="width: 100%; display: flex;padding: 5px;">
+            <div style="width: 100%; display: flex;padding: 2px">
                 <img style="height: 24px; width:24px;" src="images/assets/check.png" />
-                <span style = "padding-left: 10px" id="countDung" style="color: #449d44;">{{ item.pass }}</span>
+                <span style = "padding-left: 10px" style="color: #449d44;">{{ item.passed }}</span>
             </div>
 
-            <div style="width: 100%; display: flex; padding: 5px;">
+            <div style="width: 100%; display: flex; padding: 2px">
                 <img style="height: 24px; width:24px;" src="images/assets/wrongcheck.png" />
-                <span style = "padding-left: 10px" id="countSai" style="color: #d9534f;">{{ item.wrong }}</span>
+                <span style = "padding-left: 10px" style="color: #d9534f;">{{ item.failed }}</span>
             </div>
 
-            <div style="width: 100%; display: flex;padding: 5px;">
+            <div style="width: 100%; display: flex;padding: 2px">
                 <img style="height: 24px; width:24px;" src="images/assets/uncheck.png" />
-                <span style = "padding-left: 10px" id="countChuaLam">{{ countChuaLam }}</span>
+                <span style = "padding-left: 10px" >{{ item.unchecked }}</span>
+            </div>
+            <div style="width: 100%; display: flex;padding: 2px">
+                <img style="height: 24px; width:24px;" src="images/assets/clock.png" />
+                <span style = "padding-left: 10px" >{{ item.duration }}</span>
             </div>
         </div>
         

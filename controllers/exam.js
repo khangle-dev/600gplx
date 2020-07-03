@@ -4,7 +4,6 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.licenseCode = license.code
 
     var questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode == $scope.licenseCode)}).map(function(exam){return exam.questionNo})
-    console.log(questionNos)
     $scope.questionNos = questionNos
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
