@@ -18,7 +18,7 @@ app.controller("examCtrl", function ($scope, $interval) {
 
         $scope.timer = `${minutes} : ${seconds}`
         
-        if ($scope.countDown == 0) alert("Hết giờ")
+        if ($scope.countDown == 0) $scope.submit()
     }, 1000, $scope.countDown)
 
     load(0)
@@ -50,7 +50,6 @@ app.controller("examCtrl", function ($scope, $interval) {
     }
 
     $scope.toggleAnswer = function (answerIndex) {
-        //$scope.saveAnses[$scope.index] = $scope.question.answers[answerIndex].correct
         toggleExamAnswer($scope.licenseCode, $scope.examCode, $scope.question.index, answerIndex);
     }
 

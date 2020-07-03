@@ -2,7 +2,8 @@ app.controller("detailsCtrl", function ($scope) {
     saveDataFromQueryString()
     $scope.licenseCode = license.code
     var index = parseInt(getParaCurr("index"))
-    $scope.questions = fullQuestions.filter(function(question){return license.code == "B2"})
+    
+    $scope.questions = fullQuestions
     
     load(index);
 

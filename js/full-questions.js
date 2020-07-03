@@ -1,4 +1,4 @@
-var fullQuestions = [{
+var originalQuestions = [{
 	"image": "",
 	"index": 1,
 	"text": "Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì?",
@@ -13434,27 +13434,15 @@ var fullQuestions = [{
 	"b1": 1
 }]
 
+var fullQuestions = ["B2", "C", "D", "E", "F"].includes(localStorage.getItem("is_license")) ? originalQuestions : 
+(["B1"].includes(localStorage.getItem("is_license")) ? originalQuestions.filter(function(question){return question.b1>0}) : 
+(["A3", "A4"].includes(localStorage.getItem("is_license")) ? originalQuestions.filter(function(question){return question.a3>0}) : 
+(["A1"].includes(localStorage.getItem("is_license")) ? originalQuestions.filter(function(question){return question.a1>0}) : 
+(["A2"].includes(localStorage.getItem("is_license")) ? originalQuestions.filter(function(question){return question.a2>0}) : [])))
+)
+
 var dangerQuestions = fullQuestions.filter(function (question) {
   return question.required > 0;
 })
 
-var numOfQuestion = fullQuestions.length
-var numOfTopic1 = fullQuestions.filter(function(question){return question.topic == 1}).length
-var numOfTopic2 = fullQuestions.filter(function(question){return question.topic == 2}).length
-var numOfTopic3 = fullQuestions.filter(function(question){return question.topic == 3}).length
-var numOfTopic4 = fullQuestions.filter(function(question){return question.topic == 4}).length
-var numOfTopic5 = fullQuestions.filter(function(question){return question.topic == 5}).length
-var numOfTopic6 = fullQuestions.filter(function(question){return question.topic == 6}).length
-var numOfTopic7 = fullQuestions.filter(function(question){return question.topic == 7}).length
-var numOfTopic8 = fullQuestions.filter(function(question){return question.required > 0}).length
-
-var topics = [
-	{"code":0, "display":"Toàn bộ câu hỏi", "subTitle":  `${numOfQuestion} câu`},
-	{"code":1, "display":"Khái niệm và quy tắc giao thông", "subTitle":  `${numOfTopic1} câu`},
-	{"code":2, "display":"Nghiệp vụ vận tải", "subTitle":`${numOfTopic2} câu`},
-	{"code":3, "display":"Văn hoá và đạo đức", "subTitle":`${numOfTopic3} câu`},
-	{"code":4, "display":"Kỹ thuật lái xe", "subTitle":`${numOfTopic4} câu`},
-	{"code":5, "display":"Cấu tạo và sữa chữa", "subTitle":`${numOfTopic5} câu`},
-	{"code":6, "display":"Biển báo và đường bộ", "subTitle":`${numOfTopic6} câu`},
-	{"code":7, "display":"Sa hình", "subTitle":`${numOfTopic7} câu`},
-	{"code":8, "display":"Câu liệt", "subTitle":`${numOfTopic8} câu`}];
+var topics = []
