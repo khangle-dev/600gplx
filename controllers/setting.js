@@ -11,8 +11,6 @@ app.controller("settingCtrl", function ($scope) {
         (["A2"].includes(localStorage.getItem("is_license")) ? originalQuestions.filter(function(question){return question.a2>0}) : [])))
         )
 
-        console.log(fullQuestions)
-
         resetIndex()
     };
     $scope.isChoose = function (licenseCode) {

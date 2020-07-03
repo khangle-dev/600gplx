@@ -19,6 +19,6 @@ app.controller("listCtrl", function ($scope) {
             css_class = "correct" + danger_css;
         }
         
-        $scope.list.push({index: question.index, css_class: css_class})
+        $scope.list.push({index: question.no, css_class: css_class})
     })
 });

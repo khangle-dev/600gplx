@@ -10,15 +10,15 @@
     <div id="list">
         <div class="item" ng-repeat="q in list">
             <div>
-                <b>Câu {{ q.index }}: {{ q.text }}</b>
+                <b>Câu {{ q.no }}: {{ q.text }}</b>
             </div>
             <div id="q-image" style="display: {{ q.image ? 'block' : 'none' }}; margin-top: 10px; text-align: center;">
                 <img src="images/questions/{{ q.image }}" />
             </div>
             <div id="answers" style="margin-top: 10px;">
-                <div class="answer {{ getResultClass(q.index - 1, $index, a) }}" ng-repeat="a in q.answers">
+                <div class="answer {{ getResultClass(q.index, $index, a) }}" ng-repeat="a in q.answers">
                     <div style="width: 20px;">
-                        <input type="radio" name="ans{{$index}}" disabled="disabled" ng-checked="hasChecked(q.index - 1, $index)" />
+                        <input type="radio" name="ans{{$index}}" disabled="disabled" ng-checked="hasChecked(q.index, $index)" />
                     </div>
                     <div class="a-text" style="margin-left: 7px;">{{ a.text }}</div>
                 </div>

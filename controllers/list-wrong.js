@@ -1,12 +1,14 @@
 app.controller("listWrongCtrl", function ($scope) {
     $scope.list = []
     $scope.licenseCode = license.code
+    $scope.questions = fullQuestions
+    resetIndex()
 
-    for (var i = 0; i < 450; i++) {
-        if (hasAnswered($scope.licenseCode, i) && isAnsweredWrong($scope.licenseCode, i)) {
-            $scope.list.push(fullQuestions[i]);
+    $scope.questions.forEach(function(question){
+        if (hasAnswered($scope.licenseCode, question.index) && isAnsweredWrong($scope.licenseCode, question.index)) {
+            $scope.list.push(question);
         }
-    }
+    })
 
     $scope.hasChecked = function (questionIndex, answerIndex) {
         return isAnswered($scope.licenseCode, questionIndex, answerIndex);

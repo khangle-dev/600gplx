@@ -3,7 +3,8 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.examCode = getParaCurr("examCode")
     $scope.licenseCode = license.code
 
-    let questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode == $scope.licenseCode)}).map(function(exam){return exam.questionNo})
+    let questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode.includes($scope.licenseCode))}).map(function(exam){return exam.questionNo})
+    console.log(questionNos)
     $scope.questionNos = questionNos
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
@@ -24,32 +25,33 @@ app.controller("examCtrl", function ($scope, $interval) {
 
     function load(index = 0) {
         
-        $scope.index = index;
-        $scope.show_result = false;
+        $scope.index = index
+        $scope.show_result = false
 
         $scope.question = $scope.questions[index]
     }
 
     $scope.nextQuestion = function() {
-        let index = $scope.index;
-        index ++;
+        let index = $scope.index
+        index ++
 
         if (index > $scope.questions.length - 1) index =$scope.questions.length - 1
 
-        load(index);
+        load(index)
     }
 
     $scope.prevQuestion = function() {
-        let index = $scope.index;
-        index --;
+        let index = $scope.index
+        index --
 
-        if (index < 0) index = 0;
+        if (index < 0) index = 0
 
-        load(index);
+        load(index)
     }
 
     $scope.toggleAnswer = function (answerIndex) {
-        toggleExamAnswer($scope.licenseCode, $scope.examCode, $scope.question.index, answerIndex);
+        toggleExamAnswer($scope.licenseCode, $scope.examCode, $scope.question.index, answerIndex)
+        toggleAnswer($scope.licenseCode, $scope.question.index, answerIndex)
     }
 
     $scope.isAnswered = function(answerIndex) {
@@ -70,4 +72,4 @@ app.controller("examCtrl", function ($scope, $interval) {
         let failed = $scope.questionNos.length - (passed + unchecked)
         saveExam($scope.licenseCode, $scope.examCode, `{"passed":${passed}, "failed":${failed}, "danger":${danger}, "unchecked": ${unchecked}, "time":${$scope.countDown}, "result":${result}}`)
     }
-});
+})

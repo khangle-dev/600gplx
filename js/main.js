@@ -95,6 +95,7 @@ function getExamAnswered(licenseCode, examCode, questionIndex) {
 function isExamAnsweredCorrect(licenseCode, examCode, questionIndex) {
     var question = fullQuestions.filter(function (question) { return question.index == questionIndex })[0]
 
+    console.log("K", question, questionIndex)
     for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
         var answer = question.answers[answerIndex];
 
@@ -248,7 +249,7 @@ function resetIndex() {
     if (license.code == "A1") {
         fullQuestions = fullQuestions.map(function (question) {
             var item = question
-            item.index = item.a1
+            item.no = item.a1
             return item
         })
     }
@@ -256,7 +257,7 @@ function resetIndex() {
     if (license.code == "A2") {
         fullQuestions = fullQuestions.map(function (question) {
             var item = question
-            item.index = item.a2
+            item.no = item.a2
             return item
         })
     }
@@ -264,7 +265,7 @@ function resetIndex() {
     if (license.code == "A3") {
         fullQuestions = fullQuestions.map(function (question) {
             var item = question
-            item.index = item.a3
+            item.no = item.a3
             return item
         })
     }
@@ -272,7 +273,7 @@ function resetIndex() {
     if (license.code == "A4") {
         fullQuestions = fullQuestions.map(function (question) {
             var item = question
-            item.index = item.a4
+            item.no = item.a4
             return item
         })
     }
@@ -280,7 +281,7 @@ function resetIndex() {
     if (license.code == "B1") {
         fullQuestions = fullQuestions.map(function (question) {
             var item = question
-            //item.index = item.b1
+            item.no = item.b1
             return item
         })
     }

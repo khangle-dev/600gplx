@@ -8,7 +8,7 @@
     <div id="list">
         <div class="item" ng-repeat="q in list">
             <div>
-                <b>Câu {{ q.index }}: {{ q.text }}</b>
+                <b>Câu {{ q.no }}: {{ q.text }}</b>
             </div>
             <div id="q-image" style="margin-top: 10px; text-align: center; display: {{ q.image ? 'block' : 'none' }}">
                 <img src="images/questions/{{ q.image }}" />
