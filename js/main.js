@@ -265,6 +265,7 @@ function resetIndex() {
         fullQuestions = fullQuestions.map(function (question) {
             var item = question
             item.index = item.a3
+            return item
         })
     }
 
@@ -279,7 +280,7 @@ function resetIndex() {
     if (license.code == "B1") {
         fullQuestions = fullQuestions.map(function (question) {
             var item = question
-            item.index = item.b1
+            //item.index = item.b1
             return item
         })
     }

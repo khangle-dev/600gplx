@@ -4,8 +4,6 @@ app.controller("listCtrl", function ($scope) {
     $scope.countSai = 0;
     $scope.list = [];
     $scope.questions = fullQuestions
-    
-    console.log(fullQuestions)
 
     $scope.questions.forEach(function(question){
         var danger_css =question.required > 0 ? "danger" : ""
