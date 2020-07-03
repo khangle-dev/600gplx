@@ -16,7 +16,7 @@ app.controller("listExamCtrl", function ($scope) {
             danger: result?result.danger:0, 
             unchecked: result?result.unchecked:0, 
             duration: result?result.unchecked:0,
-            result: result?result.result:-1,
+            result: result?(result.result==1?"đạt":"chưa đạt"):"",
         });
     }
 });
