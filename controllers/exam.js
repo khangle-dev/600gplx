@@ -16,7 +16,7 @@ app.controller("examCtrl", function ($scope, $interval) {
         let minutes = Math.floor($scope.countDown / 60)
         let seconds = Math.floor($scope.countDown % 60)
 
-        $scope.timer = `${minutes} : ${seconds}`
+        $scope.timer = `${minutes}:${seconds}`
         
         if ($scope.countDown == 0) $scope.submit()
     }, 1000, $scope.countDown)
@@ -70,6 +70,10 @@ app.controller("examCtrl", function ($scope, $interval) {
         let hasAns = $scope.questions.filter(function(question){return hasExamAnswered($scope.licenseCode, $scope.examCode, question.index)}).length
         let unchecked = $scope.questionNos.length - hasAns
         let failed = $scope.questionNos.length - (passed + unchecked)
-        saveExam($scope.licenseCode, $scope.examCode, `{"passed":${passed}, "failed":${failed}, "danger":${danger}, "unchecked": ${unchecked}, "time":${$scope.countDown}, "result":${result}}`)
+        let duration = license.timer - $scope.countDown
+        let minutes = Math.floor(duration / 60)
+        let seconds = Math.floor(duration % 60)
+        let timer = `${minutes}:${seconds}`
+        saveExam($scope.licenseCode, $scope.examCode, `{"passed":${passed}, "failed":${failed}, "danger":${danger}, "unchecked": ${unchecked}, "time":"${timer}", "result":${result}}`)
     }
 })

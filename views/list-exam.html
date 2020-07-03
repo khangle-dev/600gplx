@@ -6,31 +6,31 @@
         </a>
     </div>
     <div id="list">
-        <div id="exam" ng-repeat="item in list" style = "{{ item.css_class }}">
+        <div id="exam" ng-repeat="item in list" style = "height: 130px;width: 165px;{{ item.css_class }}">
             <a style="{{item.title_css}} font-weight:bold;" href="#!exam?examCode={{ item .index}}">Đề số {{ item.index }}</a>
-            <div style="width: 100%; align-items: center;padding: 2px">{{ item.result }}</div>
+            
             <div style="width: 100%; display: flex;align-items: center;padding: 2px">
                 <div style="width: 100%; display: flex;align-items: center;padding: 2px">
                     <img style="height: 20px; width:20px;" src="images/assets/check.png" />
-                    <span style="padding-left: 10px" style="color: #449d44;">{{ item.passed }}</span>
+                    <span style="padding-left: 10px; font-size:16px" style="color: #449d44;">{{ item.passed }}</span>
                 </div>
                 <div style="width: 100%; display: flex;align-items: center; padding: 2px">
                     <img style="height: 20px; width:20px;" src="images/assets/wrongcheck.png" />
-                    <span style="padding-left: 10px" style="color: #d9534f;">{{ item.failed }}</span>
+                    <span style="padding-left: 10px; font-size:16px" style="color: #d9534f;">{{ item.failed }}</span>
                 </div>
             </div>
 
             <div style="width: 100%; display: flex;align-items: center;padding: 2px">
                 <div style="width: 100%; display: flex;align-items: center;padding: 2px">
                     <img style="height: 20px; width:20px;" src="images/assets/uncheck.png" />
-                    <span style="padding-left: 10px">{{ item.unchecked }}</span>
+                    <span style="padding-left: 10px; font-size:16px">{{ item.unchecked }}</span>
                 </div>
                 <div style="width: 100%; display: flex;align-items: center;padding: 2px">
                     <img style="height: 20px; width:20px;" src="images/assets/clock.png" />
-                    <span style="padding-left: 10px">{{ item.duration }}</span>
+                    <span style="padding-left: 10px; font-size:16px">{{ item.duration }}</span>
                 </div>
             </div>
-            
+            <div style="width: 100%; align-items: center;padding: 2px">{{ item.result }}</div>
         </div>
 
     </div>
