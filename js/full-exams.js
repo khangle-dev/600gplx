@@ -1,4 +1,4 @@
-var fullExams = [
+const fullExams = [
     {
       "licenseCode": "A1",
       "exam": 1,

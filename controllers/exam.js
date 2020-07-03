@@ -3,7 +3,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     $scope.examCode = getParaCurr("examCode")
     $scope.licenseCode = license.code
 
-    var questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode == $scope.licenseCode)}).map(function(exam){return exam.questionNo})
+    let questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode == $scope.licenseCode)}).map(function(exam){return exam.questionNo})
     $scope.questionNos = questionNos
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
@@ -12,8 +12,8 @@ app.controller("examCtrl", function ($scope, $interval) {
 
     $interval(function() {
         $scope.countDown--
-        var minutes = Math.floor($scope.countDown / 60)
-        var seconds = Math.floor($scope.countDown % 60)
+        let minutes = Math.floor($scope.countDown / 60)
+        let seconds = Math.floor($scope.countDown % 60)
 
         $scope.timer = `${minutes} : ${seconds}`
         
@@ -31,7 +31,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     }
 
     $scope.nextQuestion = function() {
-        var index = $scope.index;
+        let index = $scope.index;
         index ++;
 
         if (index > $scope.questions.length - 1) index =$scope.questions.length - 1
@@ -40,7 +40,7 @@ app.controller("examCtrl", function ($scope, $interval) {
     }
 
     $scope.prevQuestion = function() {
-        var index = $scope.index;
+        let index = $scope.index;
         index --;
 
         if (index < 0) index = 0;
@@ -53,14 +53,21 @@ app.controller("examCtrl", function ($scope, $interval) {
     }
 
     $scope.isAnswered = function(answerIndex) {
-        return isExamAnswered($scope.licenseCode, $scope.examCode, $scope.question.index, answerIndex) == true ? "checked" : ""
+        return getExamAnswered($scope.licenseCode, $scope.examCode, $scope.question.index) == answerIndex ? "checked" : ""
     }
 
     $scope.submit = function() {
-        var saveAnses = $scope.questionNos.map(function(questionIndex){
+        let saveAnses = $scope.questionNos.map(function(questionIndex){
             return isExamAnsweredCorrect($scope.licenseCode, $scope.examCode, questionIndex)
         })
-        var danger = 0
-        saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${saveAnses.filter(function(e){return e == true}).length}", "time":"${$scope.countDown}", "danger":"${danger}"}`)
+        let dangerQuestions = $scope.questions.filter(function(question){return question.required > 0})
+        let dangerCorrectAnses  = dangerQuestions.map(function(question){return isExamAnsweredCorrect($scope.licenseCode, $scope.examCode, question.index) })
+        let danger = dangerCorrectAnses.length
+        let passed = saveAnses.filter(function(ans){return ans == true}).length
+        let result = (passed >= license.pass)?1:0
+        let hasAns = $scope.questions.filter(function(question){return hasExamAnswered($scope.licenseCode, $scope.examCode, question.index)}).length
+        let unchecked = $scope.questionNos.length - hasAns
+        let failed = $scope.questionNos.length - (passed + unchecked)
+        saveExam($scope.licenseCode, $scope.examCode, `{"passed":${passed}, "failed":${failed}, "danger":${danger}, "unchecked": ${unchecked}, "time":${$scope.countDown}, "result":${result}}`)
     }
 });

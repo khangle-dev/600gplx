@@ -1,4 +1,4 @@
-var fullLicenses = [
+const fullLicenses = [
     {"code":"A1", "display":"Xe môtô 2 bánh có dung tích xi-lanh từ 50cc đến dưới 175cc", "timer":900, "pass":21, "randQuestions":[{"topicCode":1, "num":11},{"topicCode":2, "num":0},{"topicCode":3, "num":0},{"topicCode":4, "num":2},{"topicCode":5, "num":0},{"topicCode":6, "num":8},{"topicCode":7, "num":4}]},
     {"code":"A2", "display":"Xe môtô 2 bánh có dung tích xi-lanh từ 175cc trở lên", "timer":900, "pass":23, "randQuestions":[{"topicCode":1, "num":8},{"topicCode":2, "num":0},{"topicCode":3, "num":1},{"topicCode":4, "num":1},{"topicCode":5, "num":1},{"topicCode":6, "num":10},{"topicCode":7, "num":4}]},
     {"code":"A3", "display":"Xe môtô 3 bánh", "timer":900, "pass":23, "randQuestions":[{"topicCode":1, "num":9},{"topicCode":2, "num":0},{"topicCode":3, "num":1},{"topicCode":4, "num":1},{"topicCode":5, "num":0},{"topicCode":6, "num":9},{"topicCode":7, "num":5}]},

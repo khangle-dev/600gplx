@@ -1,4 +1,4 @@
-var originalQuestions = [{
+const originalQuestions = [{
 	"image": "",
 	"index": 1,
 	"text": "Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì?",

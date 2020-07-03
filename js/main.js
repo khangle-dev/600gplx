@@ -86,25 +86,10 @@ function toggleExamAnswer(licenseCode, examCode, questionIndex, answerIndex) {
     return true
 }
 
-function isExamAnswered(licenseCode, examCode, questionIndex, answerIndex) {
+function getExamAnswered(licenseCode, examCode, questionIndex) {
     var key = "is_answer_" + licenseCode + "_" + examCode + "_" + questionIndex
     var value = localStorage.getItem(key)
-
-    if (value == answerIndex) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function isExamAnsweredWrong(licenseCode, examCode, questionIndex) {
-    var question = fullQuestions.filter(function (question) { return question.index == questionIndex })[0]
-    for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
-        var answer = question.answers[answerIndex];
-        if (answer.correct && !isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
-        if (!answer.correct && isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
-    }
-    return false;
+    return value
 }
 
 function isExamAnsweredCorrect(licenseCode, examCode, questionIndex) {
@@ -113,11 +98,20 @@ function isExamAnsweredCorrect(licenseCode, examCode, questionIndex) {
     for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
         var answer = question.answers[answerIndex];
 
-        if (answer.correct && isExamAnswered(licenseCode, examCode, questionIndex, answerIndex)) return true;
+        if (answer.correct && getExamAnswered(licenseCode, examCode, questionIndex)==answerIndex) return true;
     }
     return false;
 }
 
+function hasExamAnswered(licenseCode, examCode, questionIndex) {
+    var key = "is_answer_" + licenseCode + "_" + examCode + "_" + questionIndex
+    var value = localStorage.getItem(key)
+    if (value) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function getSaveAns(licenseCode, questionIndex) {
     var key = "is_answer_" + licenseCode + "_" + questionIndex;
