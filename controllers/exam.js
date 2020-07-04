@@ -29,6 +29,7 @@ app.controller("examCtrl", function ($scope, $interval) {
         $scope.show_result = false
 
         $scope.question = $scope.questions[index]
+        $scope.dangerCss = ($scope.question.required > 0) ? "color:#ff9400" : ""
     }
 
     $scope.nextQuestion = function() {
@@ -67,7 +68,6 @@ app.controller("examCtrl", function ($scope, $interval) {
         let danger = dangerCorrectAnses.length
         let passed = saveAnses.filter(function(ans){return ans == true}).length
         let result = ((passed >= license.pass) && (danger>=dangerQuestions.length))?1:0
-        console.log("DANGER",danger, dangerQuestions.length)
         let hasAns = $scope.questions.filter(function(question){return hasExamAnswered($scope.licenseCode, $scope.examCode, question.index)}).length
         let unchecked = $scope.questionNos.length - hasAns
         let failed = $scope.questionNos.length - (passed + unchecked)
@@ -75,6 +75,6 @@ app.controller("examCtrl", function ($scope, $interval) {
         let minutes = Math.floor(duration / 60)
         let seconds = Math.floor(duration % 60)
         let timer = `${minutes}:${seconds}`
-        saveExam($scope.licenseCode, $scope.examCode, `{"passed":${passed}, "failed":${failed}, "danger":"${danger}/${dangerQuestions.length}", "unchecked": ${unchecked}, "time":"${timer}", "result":${result}}`)
+        saveExam($scope.licenseCode, $scope.examCode, `{"passed":${passed}, "failed":${failed}, "danger":${danger}, "unchecked": ${unchecked}, "time":"${timer}", "result":${result}}`)
     }
 })
