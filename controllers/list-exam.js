@@ -1,5 +1,8 @@
 app.controller("listExamCtrl", function ($scope) {
-    $scope.list = [];
+    $scope.list = []
+    $scope.licenseCode = license.code
+    $scope.licensePass = license.pass
+
     var exams = fullExams.filter(function(exam){return exam.licenseCode.includes(license.code)})
 
     var topics = Array.from(new Set(exams.map((item) => item.exam)))
