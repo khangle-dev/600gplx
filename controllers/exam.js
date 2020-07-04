@@ -74,6 +74,6 @@ app.controller("examCtrl", function ($scope, $interval) {
         let minutes = Math.floor(duration / 60)
         let seconds = Math.floor(duration % 60)
         let timer = `${minutes}:${seconds}`
-        saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${passed}/$scope.questionNos.length", "failed":${failed}, "danger":"${danger}/${dangerQuestions.length}", "unchecked": ${unchecked}, "time":"${timer}", "result":${result}}`)
+        saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${passed}/${scope.questionNos.length}", "failed":${failed}, "danger":"${danger}/${dangerQuestions.length}", "unchecked": ${unchecked}, "time":"${timer}", "result":${result}}`)
     }
 })
