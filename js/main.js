@@ -95,7 +95,6 @@ function getExamAnswered(licenseCode, examCode, questionIndex) {
 function isExamAnsweredCorrect(licenseCode, examCode, questionIndex) {
     var question = fullQuestions.filter(function (question) { return question.index == questionIndex })[0]
 
-    console.log("K", question, questionIndex)
     for (var answerIndex = 0; answerIndex < question.answers.length; answerIndex++) {
         var answer = question.answers[answerIndex];
 
