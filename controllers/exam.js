@@ -66,7 +66,7 @@ app.controller("examCtrl", function ($scope, $interval) {
         let dangerCorrectAnses  = dangerQuestions.map(function(question){return isExamAnsweredCorrect($scope.licenseCode, $scope.examCode, question.index) })
         let danger = dangerCorrectAnses.length
         let passed = saveAnses.filter(function(ans){return ans == true}).length
-        let result = (passed >= license.pass)?1:0
+        let result = (passed >= license.pass) && (danger>=dangerQuestions.length)?1:0
         let hasAns = $scope.questions.filter(function(question){return hasExamAnswered($scope.licenseCode, $scope.examCode, question.index)}).length
         let unchecked = $scope.questionNos.length - hasAns
         let failed = $scope.questionNos.length - (passed + unchecked)
@@ -74,6 +74,6 @@ app.controller("examCtrl", function ($scope, $interval) {
         let minutes = Math.floor(duration / 60)
         let seconds = Math.floor(duration % 60)
         let timer = `${minutes}:${seconds}`
-        saveExam($scope.licenseCode, $scope.examCode, `{"passed":${passed}, "failed":${failed}, "danger":${danger}, "unchecked": ${unchecked}, "time":"${timer}", "result":${result}}`)
+        saveExam($scope.licenseCode, $scope.examCode, `{"passed":"${passed}/$scope.questionNos.length", "failed":${failed}, "danger":"${danger}/${dangerQuestions.length}", "unchecked": ${unchecked}, "time":"${timer}", "result":${result}}`)
     }
 })
