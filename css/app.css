@@ -101,7 +101,7 @@ img {
 }
 
 .page-home .item-hint {
-  background-color: #af52dd
+  background-color: #2ab7f8
 }
 
 .page-home .item-full {
@@ -109,7 +109,7 @@ img {
 }
 
 .page-home .item-wrong {
-  background-color: #505150
+  background-color: #dc1354
 }
 
 .page-home .item-danger {
@@ -117,7 +117,7 @@ img {
 }
 
 .page-home .item-exam {
-  background-color: #5ac8fa
+  background-color: #af52dd
 }
 
 .page-home .item-recent {
@@ -125,7 +125,7 @@ img {
 }
 
 .page-home .item-reset {
-  background-color: #dc1354
+  background-color: #505150
 }
 
 
