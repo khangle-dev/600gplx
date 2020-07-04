@@ -1,7 +1,10 @@
 app.controller("questionCtrl", function ($scope) {
-    $scope.topicCode = getParaCurr("topic");
-    $scope.topic = topics.filter(function(topic){return topic.code==$scope.topicCode})[0]
+    resetTopic()
+    $scope.topicCode = getParaCurr("topic")
 
+    console.log($scope.topicCode)
+    $scope.topic = topics.filter(function(topic){return topic.code==$scope.topicCode})[0]
+    console.log($scope.topic)
     if ($scope.topicCode == "" || $scope.topicCode == "0") {
         $scope.questions = fullQuestions;
     }else{
