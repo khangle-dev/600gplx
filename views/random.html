@@ -1,0 +1,41 @@
+<div id="details-page">
+    <h1 style="display: flex;"><div style="width: 50%;">Đề ngẫu nhiên</div> <a style="width: 50%; text-align: right;"><div style="text-align: right;color: #ff9400;" ng-click="submit()">Nộp bài</div></a></h1>
+    <h4 style="display: flex;"><div style="width: 50%;">{{index+1}}/{{questions.length}}</div><div style="width: 50%; text-align: right;">Thời gian: {{timer}}</div></h4>
+    
+    <div id="q-details">
+        <div>
+            <b style="color: #0171ec;"><span style="{{dangerCss}}">Câu {{ question.no }}:</span> {{ question.text }}</b>
+        </div>
+        <div id="q-image" style="margin-top: 10px; text-align: center; display: {{ question.image ? 'block' : 'none' }}">
+            <img src="images/questions/{{ question.image }}" />
+        </div>
+        <div id="answers" style="margin-top: 10px;">
+            <div class="answer {{ getAnswerClass($index) }}" ng-repeat="answer in question.answers" ng-click="toggleAnswer($index)">
+                <div style="width: 20px;">
+                    <input type="radio" name = "ansRadio"  ng-checked = "isAnswered($index)"/> 
+                </div>
+                <div class="a-text">{{$index + 1}}. {{ answer.text }}</div>
+            </div>
+        </div>
+        <div id="q-tip" style="margin-top: 10px; display: {{ question.tip && show_result ? 'block' : 'none' }};">
+            <b>Hướng dẫn: </b>{{ question.tip }}
+        </div>
+    </div>
+    <div class="menu">
+        <div class="item" ng-click="prevQuestion()">
+            <i class="fa fa-arrow-left"></i>
+        </div>
+        <a class="item" href="#!index">
+            <i class="fa fa-home"></i>
+        </a>
+        <a class="item" href="#!list">
+            <i class="fa fa-th"></i>
+        </a>
+        <div class="item" ng-click="toggleResult()">
+            <i class="fa fa-question"></i>
+        </div>
+        <div class="item" ng-click="nextQuestion()">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </div>
+</div>

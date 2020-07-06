@@ -86,6 +86,15 @@ function toggleExamAnswer(licenseCode, examCode, questionIndex, answerIndex) {
     return true
 }
 
+function clearExamAnswer(licenseCode, examCode) {
+    for (i=1; i<=650; i++){
+        let key = "is_answer_" + licenseCode + "_" + examCode + "_" + i
+        localStorage.removeItem(key);
+    }
+    
+    return true
+}
+
 function getExamAnswered(licenseCode, examCode, questionIndex) {
     var key = "is_answer_" + licenseCode + "_" + examCode + "_" + questionIndex
     var value = localStorage.getItem(key)

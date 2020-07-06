@@ -125,7 +125,7 @@ img {
   background-color: #af52dd
 }
 
-.page-home .item-recent {
+.page-home .item-law {
   background-color: #0171ec
 }
 
@@ -133,18 +133,14 @@ img {
   background-color: #505150
 }
 
-.page-home .item-law {
+.page-home .item-sign {
   background-color: #1189b0
 }
-
-
 
 .page-home .item:active {
   background-color: #286090;
   border-color: #204d74;
 }
-
-
 
 .page-home .fa-home-page {
   display: inline-block;

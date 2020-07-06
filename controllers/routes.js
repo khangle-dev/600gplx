@@ -5,6 +5,10 @@ app.config(function($routeProvider) {
             templateUrl : "views/list.html",
             controller : "listCtrl"
         })
+        .when("/random", {
+            templateUrl : "views/random.html",
+            controller : "randomCtrl"
+        })
         .when("/list-wrong", {
             templateUrl : "views/list-wrong.html",
             controller : "listWrongCtrl"
