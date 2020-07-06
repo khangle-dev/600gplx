@@ -100,8 +100,13 @@ img {
   text-align: center;
 }
 
+
 .page-home .item-hint {
-  background-color: #2ab7f8
+  background-color: #5750d9
+}
+
+.page-home .item-random {
+  background-color: #ff9400 
 }
 
 .page-home .item-full {
@@ -113,7 +118,7 @@ img {
 }
 
 .page-home .item-danger {
-  background-color: #ff9400
+  background-color: #b80e0a 
 }
 
 .page-home .item-exam {
@@ -127,6 +132,11 @@ img {
 .page-home .item-reset {
   background-color: #505150
 }
+
+.page-home .item-law {
+  background-color: #1189b0
+}
+
 
 
 .page-home .item:active {

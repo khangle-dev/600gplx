@@ -53,6 +53,10 @@ app.config(function($routeProvider) {
             templateUrl : "views/user-guide.html",
             controller : "userGuideCtrl"
         })
+        .when("/nd100", {
+            templateUrl : "views/nd100.html",
+            controller : "nd100Ctrl"
+        })
         .otherwise({
             templateUrl : "views/home.html",
             controller : "homeCtrl"
