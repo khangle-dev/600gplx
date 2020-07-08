@@ -8,12 +8,17 @@
     <div id="list">
         <div class="item" ng-repeat="lic in list" ng-click="chooseLicense(lic.code)">
             <a href="#!">
-                <div >
-                    <input type="radio" name = "licRadio"  ng-checked = "isChoose(lic.code)"/> 
+                <div style="display: flex;align-items: center;">
+                    <img style="border-radius: 5px; background-color: red; width: 20px; height: 20px;" src="images/assets/license_{{lic.code}}.png">
+                    <input type="radio" style="width: 20px; height: 20px;" name = "licRadio"  ng-checked = "isChoose(lic.code)"/>
                     <b style="color: #0171ec;">Bằng {{ lic.code }}</b>
                 </div>
                 <div>{{ lic.display }}</div>
             </a>
+        </div>
+
+        <div class="item">
+            <h3 style="color:red;"><span style=" width: 25px; height: 25px; margin-right: 10px;" class="fa fa-trash"></span><a href="#!reset">Xoá lịch sử ôn tập và thi</a></h3>
         </div>
     </div>
 </div>

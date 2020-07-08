@@ -1,0 +1,75 @@
+<div id="list-danger-page" class="page has-menu">
+    <h1 style="text-align: center;">Luật giao thông</h1>
+    <div class="menu">
+        <a class="item" href="#!index">
+            <i class="fa fa-home"></i>
+        </a>
+    </div>
+    <div id="list">
+        <div>
+            <h4>Hành vi</h4>
+            <div style="display: flex;">
+                <span style="color: #0171ec;"> {{ violation.entities  }}</span>
+            </div>
+            <div style="display: flex;">
+                <b> {{ violation.violation }}</b>
+            </div>
+        </div>
+        
+        <div>
+            <h4>Hình phạt</h4>
+            <div style="color:red;">{{ violation.fines }}</div>
+            <div ng-repeat="b1 in bookmarks1">
+                <a>
+                    <h5 style="color:#0171ec;">Xem chi tiết {{b1.bookmark}}</h5>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <h4>Hình phạt bổ sung</h4>
+            <div style="display: flex;">
+                <span> {{ violation.additionalPenalties }}</span>
+            </div>
+            <div ng-repeat="b2 in bookmarks2">
+                <a>
+                    <h5 style="color:#0171ec;">Xem chi tiết {{b2.bookmark}}</h5>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <h4>Ghi chú</h4>
+            <div style="display: flex;">
+                <span style="color: #0171ec;"> {{ violation.otherPenalties }}</span>
+            </div>
+        </div>
+
+        <div>
+            <h4>Khắc phục hậu quả</h4>
+            <div style="display: flex;">
+                <span> {{ violation.remedial }}</span>
+            </div>
+            <div ng-repeat="b3 in bookmarks3">
+                <a>
+                    <h5 style="color:#0171ec;">Xem chi tiết {{b3.bookmark}}</h5>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <h4>Hành vi liên quan</h4>
+            <div class="item" ng-repeat="q in list">
+                <a href="#!violation?index={{q.no}}&violationGroup={{topic.code}}">
+                    <div>
+                        <div style="display: flex;">
+                            <b> {{ q.violation }}</b>
+                        </div>
+                        <div style="color:red;">{{ q.fines }}</div>
+                        <h5 style="color:#0171ec;">Xem chi tiết</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

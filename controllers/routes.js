@@ -61,6 +61,18 @@ app.config(function($routeProvider) {
             templateUrl : "views/nd100.html",
             controller : "nd100Ctrl"
         })
+        .when("/list-law", {
+            templateUrl : "views/list-law.html",
+            controller : "listLawCtrl"
+        })
+        .when("/list-violation", {
+            templateUrl : "views/list-violation.html",
+            controller : "listViolationCtrl"
+        })
+        .when("/violation", {
+            templateUrl : "views/violation.html",
+            controller : "violationCtrl"
+        })
         .otherwise({
             templateUrl : "views/home.html",
             controller : "homeCtrl"

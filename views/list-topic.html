@@ -7,11 +7,16 @@
     </div>
     <div id="list">
         <div class="item" ng-repeat="q in list" style="display: {{ q.num > 0 ? 'block' : 'none' }};">
-            <a href="#!question?index=0&topic={{$index}}">
+            <a href="#!question?index=0&topic={{$index}}" >
+                
                 <div>
-                    <b style="color: #0171ec;">{{ q.display }}</b>
+                    <div style="display: flex; align-items: center;">
+                        <img style="border-radius: 5px; background-color: red; width: 20px; height: 20px; margin-right: 10px;"
+                    src="images/assets/topic_code_{{q.code}}.png"><b style="color: #0171ec;"> {{ q.display }}</b>
+                    </div>
+                    <div style="color: darkgray;">{{ q.subTitle }}</div>
                 </div>
-                <div>{{ q.subTitle }}</div>
+
             </a>
         </div>
     </div>

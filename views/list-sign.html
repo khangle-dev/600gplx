@@ -9,10 +9,14 @@
         <div class="item" ng-repeat="q in list">
             <a href="#!signs?index=0&signType={{q.signType}}">
                 <div>
-                    <b style="color: #0171ec;">{{ q.display }}</b>
+                    <div style="display: flex; align-items: center;">
+                        <img style="width: 20px; height: 20px; margin-right: 10px;"
+                    src="images/assets/topic_sign_{{$index}}.png"><b style="color: #0171ec;"> {{ q.display }}</b>
+                    </div>
+                    <div style="color: darkgray;">{{ q.subTitle }}</div>
                 </div>
-                <div>{{ q.subTitle }}</div>
             </a>
         </div>
     </div>
 </div>
+

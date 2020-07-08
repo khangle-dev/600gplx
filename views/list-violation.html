@@ -1,0 +1,22 @@
+<div id="list-danger-page" class="page has-menu">
+    <h1 style="text-align: center;">Luật giao thông</h1>
+    <h3 style="text-align: center;">{{topic.display}}</h3>
+    <div class="menu">
+        <a class="item" href="#!index">
+            <i class="fa fa-home"></i>
+        </a>
+    </div>
+    <div id="list">
+        <div class="item" ng-repeat="q in list">
+            <a href="#!violation?index={{q.no}}&violationGroup={{topic.code}}">
+                <div>
+                    <div style="display: flex;">
+                        <b style="color: #0171ec;"> {{ q.violation }}</b>
+                    </div>
+                    <div style="color:red;">{{ q.fines }}</div>
+                    <div style="color:#0171ec;">Xem chi tiết</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
