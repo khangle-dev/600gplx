@@ -1,5 +1,11 @@
 app.controller("violationCtrl", function ($scope) {
     $scope.violationNo = getParaCurr("index")
+    $scope.violationGroup = getParaCurr("violationGroup")
+    
+    $scope.topic = fullLawTopics.filter(function(law){
+        return law.code == $scope.violationGroup
+    })[0]
+
     $scope.violation = fullViolations.filter(function(violation){
         return violation.no == $scope.violationNo
     })[0]

@@ -27,6 +27,15 @@ h1 {
   margin-top: 10px;
 }
 
+h4 {
+  margin-bottom: 0px;
+}
+
+h5 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 .btn {
   display: inline-block;
   line-height: 50px;

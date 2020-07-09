@@ -1,20 +1,21 @@
 <div id="list-danger-page" class="page has-menu">
     <h1 style="text-align: center;">Luật giao thông</h1>
+    <div class="item" style="margin-bottom: 10px;text-align: center">
+        <input type="radio" id="bycicle" title="Xe máy" name="lawRadio" ng-model="violationType" value="1"/> <label for="bycicle">Xe máy</label>
+        <input type="radio" id="car" title="Xe ô tô" name="lawRadio" ng-model="violationType" value="2" /> <label for="car">Xe ô tô</label>
+        <input type="radio" id="other" title="Khác" name="lawRadio" ng-model="violationType" value="3" /> <label for="other">Khác</label>
+    </div>
     <div class="menu">
         <a class="item" href="#!index">
             <i class="fa fa-home"></i>
         </a>
     </div>
     <div id="list">
-        <div class="item">
-            <input type="radio" value="1" id="bycicle" title="Xe máy" name="lawRadio" ng-model="violationType"> <label for="bycicle">Xe máy</label>
-            <input type="radio" value="2" id="car" title="Xe ô tô" name="lawRadio" ng-model="violationType"/> <label for="car">Xe ô tô</label>
-            <input type="radio" value="3" id="other" title="Khác" name="lawRadio" ng-model="violationType"/> <label for="other">Khác</label>
-        </div>
-        <div class="item" ng-repeat="q in list">
+        
+        <div class="item" ng-repeat="q in list" style="margin-top: 8px;">
             <a href="#!list-violation?violationGroup={{q.code}}&violationType={{violationType}}">
-                <div>
-                    <div style="display: flex; align-items: center;">
+                <div style = "border-bottom: 1px dashed #a0a0a0;">
+                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
                         <img style="width: 20px; height: 20px; margin-right: 10px; background-color: red; border-radius: 3px;"
                             src="images/assets/topic_{{q.code}}.png"><b style="color: #0171ec;"> {{ q.display }}</b>
                     </div>

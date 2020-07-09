@@ -1,4 +1,4 @@
 app.controller("listLawCtrl", function ($scope) {
     $scope.list = fullLawTopics
-    $scope.violationType
+    $scope.violationType = "1"
 });
