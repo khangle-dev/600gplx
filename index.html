@@ -2,67 +2,71 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<title>600 câu hỏi thi sát hạch lái xe</title>
-	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="css/toastr.css">
-	<link rel="stylesheet" type="text/css" href="css/app.css">
-	<script>
-		if (localStorage.getItem("is_license")) {
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>600 câu hỏi thi sát hạch lái xe</title>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/toastr.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script>
+        if (localStorage.getItem("is_license")) {
 
-		} else {
-			localStorage.setItem("is_license", "B2")
-		}
-	</script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129782840-3"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+        } else {
+            localStorage.setItem("is_license", "B2")
+        }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129782840-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-		gtag('config', 'UA-129782840-3');
-	</script>
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-129782840-3');
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body ng-app="app-root" style="padding: 20px;">
-	<div class="ng-view"></div>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/toastr.js"></script>
-	<script type="text/javascript" src="js/angular.js"></script>
-	<script type="text/javascript" src="js/angular-route.js"></script>
-	<script type="text/javascript" src="js/fastclick.js"></script>
-	<script type="text/javascript" src="js/full-questions.js"></script>
-	<script type="text/javascript" src="js/full-signs.js"></script>
-	<script type="text/javascript" src="js/full-exams.js"></script>
-	<script type="text/javascript" src="js/full-laws.js"></script>
-	<script type="text/javascript" src="js/global-const.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+    <div class="ng-view"></div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/toastr.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular-route.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/full-questions.js"></script>
+    <script type="text/javascript" src="js/full-signs.js"></script>
+    <script type="text/javascript" src="js/full-exams.js"></script>
+    <script type="text/javascript" src="js/full-laws.js"></script>
+    <script type="text/javascript" src="js/global-const.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
-	<script type="text/javascript" src="controllers/routes.js"></script>
-	<script type="text/javascript" src="controllers/details.js"></script>
-	<script type="text/javascript" src="controllers/home.js"></script>
-	<script type="text/javascript" src="controllers/list.js"></script>
-	<script type="text/javascript" src="controllers/list-wrong.js"></script>
-	<script type="text/javascript" src="controllers/list-danger.js"></script>
-	<script type="text/javascript" src="controllers/reset.js"></script>
-	<script type="text/javascript" src="controllers/user-guide.js"></script>
-	<script type="text/javascript" src="controllers/list-exam.js"></script>
-	<script type="text/javascript" src="controllers/list-topic.js"></script>
-	<script type="text/javascript" src="controllers/list-sign.js"></script>
-	<script type="text/javascript" src="controllers/signs.js"></script>
-	<script type="text/javascript" src="controllers/question.js"></script>
-	<script type="text/javascript" src="controllers/exam.js"></script>
-	<script type="text/javascript" src="controllers/setting.js"></script>
-	<script type="text/javascript" src="controllers/random.js"></script>
-	<script type="text/javascript" src="controllers/list-law.js"></script>
-	<script type="text/javascript" src="controllers/list-violation.js"></script>
-	<script type="text/javascript" src="controllers/violation.js"></script>
+    <script type="text/javascript" src="controllers/routes.js"></script>
+    <script type="text/javascript" src="controllers/details.js"></script>
+    <script type="text/javascript" src="controllers/home.js"></script>
+    <script type="text/javascript" src="controllers/list.js"></script>
+    <script type="text/javascript" src="controllers/list-wrong.js"></script>
+    <script type="text/javascript" src="controllers/list-danger.js"></script>
+    <script type="text/javascript" src="controllers/reset.js"></script>
+    <script type="text/javascript" src="controllers/user-guide.js"></script>
+    <script type="text/javascript" src="controllers/list-exam.js"></script>
+    <script type="text/javascript" src="controllers/list-topic.js"></script>
+    <script type="text/javascript" src="controllers/list-sign.js"></script>
+    <script type="text/javascript" src="controllers/signs.js"></script>
+    <script type="text/javascript" src="controllers/question.js"></script>
+    <script type="text/javascript" src="controllers/exam.js"></script>
+    <script type="text/javascript" src="controllers/setting.js"></script>
+    <script type="text/javascript" src="controllers/random.js"></script>
+    <script type="text/javascript" src="controllers/list-law.js"></script>
+    <script type="text/javascript" src="controllers/list-violation.js"></script>
+    <script type="text/javascript" src="controllers/violation.js"></script>
+    <script type="text/javascript" src="controllers/nd100.js"></script>
 </body>
 
 </html>

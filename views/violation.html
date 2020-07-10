@@ -16,55 +16,55 @@
                 <b> {{ violation.violation }}</b>
             </div>
         </div>
-        
+
         <div style="margin-bottom: 10px;border-top: 1px dashed #a0a0a0;">
             <h4>Hình phạt</h4>
             <div style="color:red;">{{ violation.fines }}</div>
             <div ng-repeat="b1 in bookmarks1">
-                <a>
+                <a href="#!nd100?{{b1.bookmarkCode}}">
                     <h5 style="color:#0171ec;">Xem chi tiết {{b1.bookmark}}</h5>
                 </a>
             </div>
         </div>
 
-        <div style = "margin-bottom: 10px;border-top: 1px dashed #a0a0a0;display: {{ violation.additionalPenalties == '' ? 'none' : 'block' }}">
+        <div style="margin-bottom: 10px;border-top: 1px dashed #a0a0a0;display: {{ violation.additionalPenalties == '' ? 'none' : 'block' }}">
             <h4>Hình phạt bổ sung</h4>
             <div style="display: flex;">
                 <span> {{ violation.additionalPenalties }}</span>
             </div>
             <div ng-repeat="b2 in bookmarks2">
-                <a>
+                <a href="#!nd100?{{b1.bookmarkCode}}">
                     <h5 style="color:#0171ec;">Xem chi tiết {{b2.bookmark}}</h5>
                 </a>
             </div>
         </div>
 
-        <div style = "margin-bottom: 10px;border-top: 1px dashed #a0a0a0;display: {{ violation.otherPenalties == '' ? 'none' : 'block' }}">
+        <div style="margin-bottom: 10px;border-top: 1px dashed #a0a0a0;display: {{ violation.otherPenalties == '' ? 'none' : 'block' }}">
             <h4>Ghi chú</h4>
             <div style="display: flex;">
                 <span> {{ violation.otherPenalties }}</span>
             </div>
         </div>
 
-        <div style = "margin-bottom: 10px;border-top: 1px dashed #a0a0a0;display: {{ violation.remedial == '' ? 'none' : 'block' }}">
+        <div style="margin-bottom: 10px;border-top: 1px dashed #a0a0a0;display: {{ violation.remedial == '' ? 'none' : 'block' }}">
             <h4>Khắc phục hậu quả</h4>
             <div style="display: flex;">
                 <span> {{ violation.remedial }}</span>
             </div>
             <div ng-repeat="b3 in bookmarks3">
-                <a>
+                <a href="#!nd100?{{b1.bookmarkCode}}">
                     <h5 style="color:#0171ec;">Xem chi tiết {{b3.bookmark}}</h5>
                 </a>
             </div>
         </div>
 
-        <div style = "margin-bottom: 10px;border-top: 1px dashed #a0a0a0;display: {{ list.length == 0 ? 'none' : 'block' }}">
+        <div style="margin-bottom: 10px;border-top: 1px dashed #a0a0a0;display: {{ list.length == 0 ? 'none' : 'block' }}">
             <h4>Hành vi liên quan</h4>
-            <div style = "border-bottom: 1px dashed #a0a0a0; margin-top: 0px;" class="item" ng-repeat="q in list">
+            <div style="border-bottom: 1px dashed #a0a0a0; margin-top: 0px;" class="item" ng-repeat="q in list">
                 <a href="#!violation?index={{q.no}}&violationGroup={{topic.code}}">
                     <div>
                         <div style="color:#0171ec; display: flex;">
-                         {{ q.violation }}
+                            {{ q.violation }}
                         </div>
                         <div style="color:red;">{{ q.fines }}</div>
                         <h5 style="color:#0171ec;">Xem chi tiết</h5>
