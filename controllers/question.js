@@ -4,7 +4,9 @@ app.controller("questionCtrl", function ($scope) {
 
     console.log($scope.topicCode)
     $scope.topic = topics.filter(function(topic){return topic.code==$scope.topicCode})[0]
-    console.log($scope.topic)
+    
+    resetIndex()
+    
     if ($scope.topicCode == "" || $scope.topicCode == "0") {
         $scope.questions = fullQuestions;
     }else{

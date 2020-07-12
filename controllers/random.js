@@ -9,6 +9,8 @@ app.controller("randomCtrl", function ($scope, $interval) {
         return this[Math.floor((Math.random()*this.length))];
       }
 
+    resetIndex()
+
     $scope.questions = []
     for (i=1; i<=7; i++){
         let randOfTopic = fullQuestions.filter(function(question){return question.topic == i})
@@ -26,8 +28,6 @@ app.controller("randomCtrl", function ($scope, $interval) {
             $scope.questions.push(item)
         })
     }
-
-    console.log("$scope.questions", $scope.questions)
 
     $scope.countDown = license.timer
 
