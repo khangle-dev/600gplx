@@ -1,4 +1,4 @@
-var app = angular.module("app-root", ["ngRoute"]);
+var app = angular.module("app-root", ["ngRoute", "ngTouch"]);
 app.config(function($routeProvider) {
     $routeProvider
         .when("/list", {

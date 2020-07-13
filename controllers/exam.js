@@ -6,6 +6,9 @@ app.controller("examCtrl", function ($scope, $interval) {
     let questionNos = fullExams.filter(function(exam){return (exam.exam == parseInt($scope.examCode) && exam.licenseCode.includes($scope.licenseCode))}).map(function(exam){return exam.questionNo})
 
     $scope.questionNos = questionNos
+
+    resetIndex()
+    
     $scope.questions = fullQuestions.filter(function(question){return questionNos.includes(question.index)})
 
     $scope.countDown = license.timer

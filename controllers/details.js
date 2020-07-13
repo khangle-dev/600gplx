@@ -3,6 +3,8 @@ app.controller("detailsCtrl", function ($scope) {
     $scope.licenseCode = license.code
     var index = parseInt(getParaCurr("index"))
     
+    resetIndex()
+    
     $scope.questions = fullQuestions
     
     load(index);
@@ -41,7 +43,7 @@ app.controller("detailsCtrl", function ($scope) {
     $scope.nextQuestion = function() {
         var index = $scope.index
         index ++
-        if (index > fullQuestions.length) index = 0
+        if (index >= fullQuestions.length) index = fullQuestions.length
 
         load(index)
     }
@@ -49,7 +51,7 @@ app.controller("detailsCtrl", function ($scope) {
     $scope.prevQuestion = function() {
         var index = $scope.index
         index --
-        if (index <= 0) index = fullQuestions.length
+        if (index <= 1) index = 1
 
         load(index)
     }

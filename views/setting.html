@@ -9,8 +9,8 @@
         <div class="item" ng-repeat="lic in list" ng-click="chooseLicense(lic.code)">
             <a href="#!">
                 <div style="display: flex;align-items: center;">
-                    <img style="border-radius: 5px; background-color: red; width: 20px; height: 20px;" src="images/assets/license_{{lic.code}}.png">
-                    <input type="radio" style="width: 20px; height: 20px;" name = "licRadio"  ng-checked = "isChoose(lic.code)"/>
+                    <img style="border-radius: 5px; background-color: red; width: 25px; height: 25px;" src="images/assets/license_{{lic.code}}.png">
+                    <input type="radio" style="width: 25px; height: 25px;" name = "licRadio"  ng-checked = "isChoose(lic.code)"/>
                     <b style="color: #0171ec;">Bằng {{ lic.code }}</b>
                 </div>
                 <div>{{ lic.display }}</div>
