@@ -10,7 +10,7 @@
         <div id="answers" style="margin-top: 10px;">
             <div class="answer {{ getAnswerClass($index) }}" ng-repeat="answer in question.answers" ng-click="toggleAnswer($index)">
                 <div style="width: 20px;">
-                    <input type="radio" name = "ansRadio"  ng-checked = "isAnswered($index)"/> 
+                    <input type="radio" name="ansRadio" ng-checked="isAnswered($index)" />
                 </div>
                 <div class="a-text">{{$index + 1}}. {{ answer.text }}</div>
             </div>
