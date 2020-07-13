@@ -95,7 +95,7 @@ const originalQuestions = [{
 	"no": 5,
 	"index": 5,
 	"text": "“Dải phân cách” trên đường bộ gồm những loại nào?",
-	"tip": "Phân chia.",
+	"tip": "",
 	"answers": [{
 		"text": "Dải phân cách gồm loại cố định và loại di động.",
 		"correct": true
@@ -118,7 +118,7 @@ const originalQuestions = [{
 	"no": 6,
 	"index": 6,
 	"text": "Người lái xe được hiểu như thế nào trong các khái niệm dưới đây?",
-	"tip": "Đường không ưu tiên phải nhường đường.",
+	"tip": "",
 	"answers": [{
 		"text": "Là người điều khiển xe cơ giới",
 		"correct": true
@@ -141,7 +141,7 @@ const originalQuestions = [{
 	"no": 7,
 	"index": 7,
 	"text": "Đường mà trên đó phương tiện tham gia giao thông được các phương tiện giao thông đến từ hướng khác nhường đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên là loại đường gì?",
-	"tip": "Đường ưu tiên được nhường đường",
+	"tip": "",
 	"answers": [{
 		"text": "Đường không ưu tiên.",
 		"correct": false
@@ -179,8 +179,8 @@ const originalQuestions = [{
 	"topic": 1,
 	"a1": 7,
 	"a2": 8,
-	"a3": 1,
-	"a4": 1,
+	"a3": 8,
+	"a4": 8,
 	"b1": 1
 }, {
 	"image": "",
@@ -4065,7 +4065,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 171,
 	"index": 171,
-	"text": "Thời gian làm việc trong một ngày của người lái xe ô tô không được vượt quá bao nhiêu giờ trong trường hợp dưới đây?",
+	"text": "Thời gian làm việc trong một ngày của người lái xe ô tô không được vượt quá bao nhiêu giờ trong trường hợp dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Không quá 8 giờ.",
@@ -4091,7 +4091,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 172,
 	"index": 172,
-	"text": "Người lái xe khách phải chấp hành những quy định nào dưới đây?",
+	"text": "Người lái xe khách phải chấp hành những quy định nào dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Đón, trả khách đúng nơi quy định, không chở hành khách trên mui, trong khoang hành lý hoặc để hành khách đu bám bên ngoài xe.",
@@ -4143,7 +4143,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 174,
 	"index": 174,
-	"text": "Người kinh doanh vận tải hành khách có những quyền hạn nào dưới đây?",
+	"text": "Người kinh doanh vận tải hành khách có những quyền hạn nào dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Tự ý thay đổi vị trí đón, trả khách theo hợp đồng vận chuyển hoặc đón thêm người ngoài danh sách hành khách đã ký.",
@@ -4166,7 +4166,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 175,
 	"index": 175,
-	"text": "Hành khách có các quyền gì khi đi trên xe ô tô vận tải khách theo tuyến cố định?",
+	"text": "Hành khách có các quyền gì khi đi trên xe ô tô vận tải khách theo tuyến cố định?",
 	"tip": "Miễn cước hành lý không quá 20kg.",
 	"answers": [{
 		"text": "Được vận chuyển theo đúng hợp đồng vận tải, cam kết của người kinh doanh về chất lượng vận tải; được miễn cước hành lý với trọng lượng không quá 20kg và với kích thước phù hợp với thiết kế của xe; được từ chối chuyến đi trước khi phương tiện khởi hành và được trả lại tiền vé theo quy định của Bộ Giao thông vận tải.",
@@ -4186,7 +4186,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 176,
 	"index": 176,
-	"text": "Hành khách có các nghĩa vụ gì khi đi trên xe ô tô vận tải hành khách?",
+	"text": "Hành khách có các nghĩa vụ gì khi đi trên xe ô tô vận tải hành khách?",
 	"tip": "",
 	"answers": [{
 		"text": "Mua vé và trả cước, phí vận tải hành lý mang theo quá mức quy định; có mặt tại nơi xuất phát đúng thời gian thỏa thuận; chấp hành quy định về vận chuyển; thực hiện đúng hướng dẫn của lái xe, nhân viên phục vụ trên xe về các quy định bảo đảm trật tự, an toàn giao thông.",
@@ -4209,7 +4209,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 177,
 	"index": 177,
-	"text": "Người kinh doanh vận tải hàng hóa có các quyền gì ở dưới đây?",
+	"text": "Người kinh doanh vận tải hàng hóa có các quyền gì ở dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Yêu cầu người thuê vận tải cung cấp thông tin cần thiết về hàng hóa để ghi vào giấy vận chuyển và có quyền kiểm tra tính xác thực của các thông tin đó.",
@@ -4232,7 +4232,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 178,
 	"index": 178,
-	"text": "Người kinh doanh vận tải hàng hóa có các nghĩa vụ gì dưới đây?",
+	"text": "Người kinh doanh vận tải hàng hóa có các nghĩa vụ gì dưới đây?",
 	"tip": "Bồi thường thiệt hại.",
 	"answers": [{
 		"text": "Cung cấp phương tiện và thực hiện thời gian, địa điểm giao hàng hóa cho người nhận hàng theo điều kiện của người kinh doanh vận tải; chịu trách nhiệm về hậu quả mà người làm công, người đại diện gây ra do thực hiện yêu cầu của người kinh doanh vận tải phù hợp với quy định của pháp luật.",
@@ -4255,7 +4255,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 179,
 	"index": 179,
-	"text": "Người thuê vận tải hàng hóa có các quyền hạn gì dưới đây?",
+	"text": "Người thuê vận tải hàng hóa có các quyền hạn gì dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Từ chối xếp hàng lên phương tiện mà phương tiện đó không đúng thỏa thuận trong hợp đồng; yêu cầu người kinh doanh vận tải giao hàng đúng thời gian, địa điểm đã thỏa thuận trong hợp đồng; yêu cầu người kinh doanh vận tải bồi thường thiệt hại theo quy định của pháp luật.",
@@ -4275,7 +4275,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 180,
 	"index": 180,
-	"text": "Người thuê vận tải hàng hóa có các nghĩa vụ gì dưới đây?",
+	"text": "Người thuê vận tải hàng hóa có các nghĩa vụ gì dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Chuẩn bị đầy đủ các giấy tờ hợp pháp về hàng hóa trước khi giao hàng hóa cho người kinh doanh vận tải; đóng gói hàng hóa đúng quy cách, ghi ký hiệu, mã hiệu hàng hóa đầy đủ, rõ ràng; giao hàng hóa cho người kinh doanh vận tải đúng thời gian, địa điểm và nội dung khác ghi trong giấy gửi hàng.",
@@ -4298,7 +4298,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 181,
 	"index": 181,
-	"text": "Người nhận hàng có các quyền gì dưới đây?",
+	"text": "Người nhận hàng có các quyền gì dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Nhận và kiểm tra hàng hóa nhận được theo giấy vận chuyển hoặc chứng từ tương đương khác; yêu cầu người kinh doanh vận tải thanh toán chi phí phát sinh do giao hàng hóa chậm.",
@@ -4321,7 +4321,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 182,
 	"index": 182,
-	"text": "Người nhận hàng có các nghĩa vụ gì dưới đây?",
+	"text": "Người nhận hàng có các nghĩa vụ gì dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Nhận hàng hóa đúng thời gian, địa điểm đã thỏa thuận.",
@@ -4344,7 +4344,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 183,
 	"index": 183,
-	"text": "Hàng siêu trường, siêu trọng được hiểu như thế nào là đúng?",
+	"text": "Hàng siêu trường, siêu trọng được hiểu như thế nào là đúng?",
 	"tip": "Hàng siêu trường, siêu trọng không thể tháo rời.",
 	"answers": [{
 		"text": "Là hàng có kích thước vượt quá kích thước và trọng lượng của xe.",
@@ -4367,7 +4367,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 184,
 	"index": 184,
-	"text": "Việc vận chuyển động vật sống phải tuân theo những quy định nào dưới đây?",
+	"text": "Việc vận chuyển động vật sống phải tuân theo những quy định nào dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Tùy theo loại động vật sống, người kinh doanh vận tải yêu cầu người thuê vận tải áp tải để chăm sóc trong quá trình vận tải.",
@@ -4390,7 +4390,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 185,
 	"index": 185,
-	"text": "Xe vận chuyển hàng nguy hiểm phải chấp hành những quy định nào dưới đây?",
+	"text": "Xe vận chuyển hàng nguy hiểm phải chấp hành những quy định nào dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Phải có giấy phép do cơ quan có thẩm quyền cấp, xe vận chuyển hàng nguy hiểm không được dừng, đỗ nơi đông người, những nơi dễ xảy ra nguy hiểm.",
@@ -4413,7 +4413,7 @@ const originalQuestions = [{
 	"image": "",
 	"no": 186,
 	"index": 186,
-	"text": "Trong đô thị, người lái xe buýt, xe chở hàng phải thực hiện những quy định nào dưới đây?",
+	"text": "Trong đô thị, người lái xe buýt, xe chở hàng phải thực hiện những quy định nào dưới đây?",
 	"tip": "",
 	"answers": [{
 		"text": "Người lái xe buýt phải chạy đúng tuyến, đúng lịch trình và dừng đỗ đúng nơi quy định; người lái xe chở hàng phải hoạt động đúng tuyến, phạm vi và thời gian quy định đối với từng loại xe.",
@@ -4456,7 +4456,7 @@ const originalQuestions = [{
 	"image": "q188.png",
 	"no": 188,
 	"index": 188,
-	"text": "Những ký hiệu hàng hóa dưới đây, ký hiệu nào chống mưa?",
+	"text": "Những ký hiệu hàng hóa dưới đây, ký hiệu nào chống mưa?",
 	"tip": "",
 	"answers": [{
 		"text": "Hình 1.",
@@ -6111,13 +6111,13 @@ const originalQuestions = [{
 	"image": "",
 	"no": 261,
 	"index": 261,
-	"text": "Khi đi từ đường nhánh ra đường chính, người lái xe phải xử lý như nào là đúng quy tắc giao thông?",
+	"text": "Khi đi từ đường nhánh ra đường chính, người lái xe phải xử lý như nào là đúng quy tắc giao thông?",
 	"tip": "",
 	"answers": [{
-		"text": "Giảm tốc độ, nhường đường cho xe trên đường chính từ bất kì hướng nào tới.",
+		"text": "Giảm tốc độ, nhường đường cho xe trên đường chính từ bất kì hướng nào tới.",
 		"correct": true
 	}, {
-		"text": "Nháy đèn, bấm còi để xe đi trên đường chính biết và tăng tốc độ cho xe đi ra đường chính.",
+		"text": "Nháy đèn, bấm còi để xe đi trên đường chính biết và tăng tốc độ cho xe đi ra đường chính.",
 		"correct": false
 	}, {
 		"text": "Quan sát xe đang đi trên đường chính, nếu là xe có kích thước lớn hơn thì nhường đường, xe có kích thước nhỏ hơn thì tăng tốc độ cho xe đi ra đường chính.",
@@ -6134,16 +6134,16 @@ const originalQuestions = [{
 	"image": "",
 	"no": 262,
 	"index": 262,
-	"text": "Khi đang lái xe mô tô và ô tô, nếu có nhu cầu sử dụng điện thoại để nhắn tin hoặc gọi điện, người lái xe phải thực hiện như thế nào trong các tình huống nêu dưới đây?",
+	"text": "Khi đang lái xe mô tô và ô tô, nếu có nhu cầu sử dụng điện thoại để nhắn tin hoặc gọi điện, người lái xe phải thực hiện như thế nào trong các tình huống nêu dưới đây?",
 	"tip": "",
 	"answers": [{
-		"text": "Giảm tốc độ để đảm bảo an toàn với xe phía trước và sử dụng điện thoại để liên lạc.",
+		"text": "Giảm tốc độ để đảm bảo an toàn với xe phía trước và sử dụng điện thoại để liên lạc.",
 		"correct": false
 	}, {
-		"text": "Giảm tốc độ để dừng xe ở nơi cho phép dừng xe sau đó sử dụng điện thoại để liên lạc.",
+		"text": "Giảm tốc độ để dừng xe ở nơi cho phép dừng xe sau đó sử dụng điện thoại để liên lạc.",
 		"correct": true
 	}, {
-		"text": "Tăng tốc độ để cách xa xe phía sau và sử dụng điện thoại để liên lạc.",
+		"text": "Tăng tốc độ để cách xa xe phía sau và sử dụng điện thoại để liên lạc.",
 		"correct": false
 	}],
 	"required": 1,
@@ -13933,7 +13933,7 @@ const originalQuestions = [{
 	"text": "Xe của bạn đang di chuyển gần đến khu vực giao cắt với đường sắt, khi rào chắn đang dịch chuyển, bạn điều khiển xe như thế nào là đúng quy tắc giao thông?",
 	"tip": "Bắt buộc phải dừng xe.",
 	"answers": [{
-		"text": "Quan sát nếu thấy không có tàu thì tăng tốc cho xe vượt qua đường sắt.",
+		"text": "Quan sát nếu thấy không có tàu thì tăng tốc cho xe vượt qua đường sắt.",
 		"correct": false
 	}, {
 		"text": "Dừng lại trước rào chắn một khoảng cách an toàn.",
